@@ -4,6 +4,7 @@ import cors from "cors";
 import "dotenv/config";
 import myUserRoute from "./Routes/MyUserRoutes"
 import myRestaurantRoute from "./Routes/MyRestaurantRoute";
+import restaurantRoute from "./Routes/RestaurantRoute";
 
 import {v2 as cloudinary} from "cloudinary";
 
@@ -30,6 +31,7 @@ app.get("/health",async (req:Request,res:Response)=>{
 app.use("/api/my/user",myUserRoute);
 app.use("/api/my/restaurant",myRestaurantRoute);
 
+app.use("/api/restaurant",restaurantRoute);
 app.listen(7000,()=>{
     console.log("server started on localhost:7000");
 });
