@@ -5,7 +5,7 @@ import "dotenv/config";
 import myUserRoute from "./Routes/MyUserRoutes"
 import myRestaurantRoute from "./Routes/MyRestaurantRoute";
 import restaurantRoute from "./Routes/RestaurantRoute";
-
+import orderRoute from "./Routes/OrderRoute"; 
 import {v2 as cloudinary} from "cloudinary";
 
 mongoose.connect(process.env.MONGO_URL as string).then(()=>{
@@ -35,3 +35,5 @@ app.use("/api/restaurant",restaurantRoute);
 app.listen(7000,()=>{
     console.log("server started on localhost:7000");
 });
+
+app.use("/api/order",orderRoute);
